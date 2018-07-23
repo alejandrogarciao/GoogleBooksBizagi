@@ -1,0 +1,93 @@
+
+.headerMenu{
+    display: flex;
+    height: 100px;
+    background-color: lightgray;
+    padding: 10px 20px 0px 15px;
+}
+
+.headerMenu span{
+padding: 20px 0px 0px 5px;
+font-size: 20px;
+color:  #093292f5;
+}
+
+ .navListMenu {
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 0;
+    list-style-type: none;
+} 
+
+article > ul > li{
+    list-style-type: none;
+}
+
+.rowNav{
+    list-style: none;
+    margin-top: 25px;
+    color: #eee;
+  }
+
+  nav > ul > li > a{
+    text-decoration: none; 
+    font-size: 17px;
+    color: #eee;
+    padding-left: 20px;
+}
+
+  .principalMenu{
+    background-image: linear-gradient(to right, rgba(30, 75, 115, 1), rgba(6, 210, 230, 0.22));
+    display: block;
+    float: left;
+    border: 1px solid lightgray;
+    width: 300px;
+    height: 100%;
+    padding: 0;
+  }
+
+  .principalMenuSmall{
+    background-image: linear-gradient(to right, rgba(30, 75, 115, 1), rgba(6, 210, 230, 0.22));
+    display: block;
+    float: left;
+    border: 1px solid lightgray;
+    width: 50px;
+    height: 100%;
+    padding: 0;
+  }
+
+  .principalMenuSmall > div {
+    height: 50px;
+    padding: 7px 2px 4px 1px;
+  }
+ 
+
+  .principalMenuSmall > div > span{
+    display:none;
+  }
+
+  .principalMenuSmall > div > img{
+    max-width: 35px;
+    max-height: 35px;
+  }
+  
+
+  .principalMenuSmall .itemNav {
+    display:none;
+  }
+ 
+
+  .principalMenuSmall > nav > ul{
+    padding-left: 12px;
+  }
+
+  .imageUser{
+    max-width: 70px;
+    max-height: 70px;
+    color: black;
+    border-radius: 50px 50px 50px 50px;
+    border: 1px solid lightgrey;
+    margin-left: 5px;
+    margin-right: 5px;
+    
+}

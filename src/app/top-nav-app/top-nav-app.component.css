@@ -1,0 +1,54 @@
+#headerPage{
+    display: flex;
+    background-image: linear-gradient(to right, rgba(30, 75, 115, 1), rgba(7, 142, 156, 0.22));
+    padding: 10px;
+}
+
+#menuContent{
+    width: 200px;
+    margin: 17px 10px 0px 30px;
+    cursor: pointer;
+    color:white;
+}
+
+header > div > i{
+    font-size: 22px;
+}
+
+#titleHeader{
+    font-size: 25px;
+    margin: 10px;
+    text-decoration: none; 
+}
+
+#searchContent{
+    width: 84%;
+    margin: 10px 10px 0px 10px;
+}
+
+#avatarcontent{
+    width: 90px;
+    padding: 0px 10px 0px 10px;
+}
+
+input[type=text]{
+    display: block;
+    float: right;
+    padding: 10px 5px;
+    border-radius: 12px 12px 12px 12px;
+    border: 1px solid #eee;
+    margin-right: 0;
+    color: #eee;
+    width: 300px;
+}
+
+.imageUser{
+    max-width: 70px;
+    max-height: 70px;
+    color: black;
+    border-radius: 50px 50px 50px 50px;
+    border: 1px solid lightgrey;
+    margin-left: 5px;
+    margin-right: 5px;
+    
+}

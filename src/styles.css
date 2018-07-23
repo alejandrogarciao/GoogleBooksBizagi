@@ -1,0 +1,25 @@
+:root{
+    --img-color-gradient: linear-gradient(to right, rgba(30, 75, 115, 1), rgba(255, 255, 255, 0));
+}
+
+*{
+    box-sizing: border-box;
+}
+html{
+    height: 100%;
+}
+
+body {
+    display: block;
+    margin: 0px;
+    height: 100%;
+}
+
+h1{
+    font-size: 25px;
+    margin: 8px;
+  }
+
+  h2{
+    display: initial;
+  }
