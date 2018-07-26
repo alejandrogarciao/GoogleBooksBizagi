@@ -6,10 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./core.component.css']
 })
 export class CoreComponent implements OnInit {
-
+  stateAside: string;
   constructor() { }
 
   ngOnInit() {
   }
-
+  closeAside(state){
+    this.stateAside = state;
+  }
 }

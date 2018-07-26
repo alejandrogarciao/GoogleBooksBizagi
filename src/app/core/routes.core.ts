@@ -1,5 +1,5 @@
 import { Routes } from "@angular/router";
-import { CoreComponent } from "./containers/core/core.component";
+import { CoreComponent } from "./containers/core/";
 
 export const routes: Routes = [
     {
@@ -18,7 +18,7 @@ export const routes: Routes = [
                 path: 'favorites',
                 loadChildren: '../favorites/favorites.module#FavoritesModule'
             },
-            {path: '', redirectTo: '/main/books', pathMatch: 'full'}
+            {path: '', redirectTo: 'books', pathMatch: 'full'}
         ]
     },
     {

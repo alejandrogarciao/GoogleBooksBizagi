@@ -13,8 +13,5 @@ export const routes: Routes = [
     {
         path: 'detail/:id',
         component: BookDetailAppComponent
-    },
-    {
-        path: '**', redirectTo: 'list', pathMatch: 'full'
     }
 ];

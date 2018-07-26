@@ -1,38 +1,24 @@
-<article>
-  <nav aria-label="breadcrumb">
-    <ol class="breadcrumb">
-      <li class="breadcrumb-item">
-        <a href="#">Home</a>
-      </li>
-      <li class="breadcrumb-item">
-        <a href="#">Library</a>
-      </li>
-      <li class="breadcrumb-item active" aria-current="page">Data</li>
-    </ol>
-  </nav>
-  <section class="books">
-    <div *ngFor="let book of booksList"  class="card-columns" >
+<section class="books">
+  <div *ngFor="let book of booksList" class="card-columns">
 
-      <div class="card">
-        <img class="rounded mx-auto d-block" [src]="book.volumeInfo.imageLinks.smallThumbnail" alt="Card image cap">
-        <div class="card-body">
-          <h5 class="card-title">{{book.volumeInfo.title}}</h5>
-          <p class="card-text"> {{book.volumeInfo.description}}</p>
-        </div>
-        <div class="card-footer">
-          <a href="{{routeLink}}">
-            <i class="fas fa-heart"></i>
-          </a>
-          <a [routerLink]="['detail',book.id]">
-            <i class="fas fa-bars"></i>
-          </a>
-          <a href="{{routeLink}}">
-            <i class="fas fa-file-alt"></i>
-          </a>
-        </div>
+    <div class="card">
+      <img class="rounded mx-auto d-block" [src]="book.volumeInfo.imageLinks.smallThumbnail" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">{{book.volumeInfo.title}}</h5>
+        <p class="card-text"> {{book.volumeInfo.description}}</p>
       </div>
-
+      <div class="card-footer">
+        <a [routerLink]="['../detail', book.id]">
+          <i class="fas fa-heart"></i>
+        </a>
+        <a [routerLink]="['../detail', book.id]">
+          <i class="fas fa-bars"></i>
+        </a>
+        <a [routerLink]="['../detail', book.id]">
+          <i class="fas fa-file-alt"></i>
+        </a>
+      </div>
     </div>
-  </section>
-</article>
-<router-outlet></router-outlet>
+
+  </div>
+</section>
