@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {books} from "../data-books";
+import {books} from "../../../data-books";
 
 @Component({
   selector: 'main-list-app',
