@@ -1,6 +1,7 @@
 #headerPage{
     display: flex;
-    background-image: linear-gradient(to right, rgba(30, 75, 115, 1), rgba(7, 142, 156, 0.22));
+    /*background-image: linear-gradient(to right, rgba(30, 75, 115, 1), rgba(7, 142, 156, 0.22));*/
+    background-image: linear-gradient(to right, rgba(30, 75, 115, 1), rgba(32, 151, 162, 0.7));
     padding: 10px;
 }
 

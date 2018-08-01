@@ -1,5 +1,5 @@
-<top-nav-app></top-nav-app>
+<top-nav-app (actionAside)="closeAside($event)"></top-nav-app>
 <div id="contentPage">
-  <left-menu-app ></left-menu-app>
-  <content-app></content-app>
+  <left-menu-app [asideState]="stateAside"></left-menu-app>
+  <content-app [ngClass]="(stateAside == 'close')? 'main-collape': ''"></content-app>
 </div>

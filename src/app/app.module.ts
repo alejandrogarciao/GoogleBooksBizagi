@@ -3,7 +3,10 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { NgModule } from '@angular/core';
 import { RouterModule } from "@angular/router";
 import { CoreModule } from "./core/core.module";
-
+import { HttpModule } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
+import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { InMemoryDataService }  from './api-data/api-books-demo';
 import { routes } from "./routes";
 import { AppComponent } from './app.component';
 
@@ -15,7 +18,12 @@ import { AppComponent } from './app.component';
     BrowserModule,
     BrowserAnimationsModule,
     RouterModule.forRoot(routes),
-    CoreModule
+    CoreModule,
+    HttpModule,
+    HttpClientModule,
+    HttpClientInMemoryWebApiModule.forRoot(
+      InMemoryDataService, { dataEncapsulation: false }
+    )
   ],  
   providers: [],
   bootstrap: [AppComponent]

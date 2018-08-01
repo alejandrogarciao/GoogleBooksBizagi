@@ -1,17 +1,19 @@
 <div id="contentArticle">
+    <app-alerts-messages></app-alerts-messages>
     <article>
       <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
           <li class="breadcrumb-item">
-            <a href="#">Home</a>
+            <a routerLink="/">Home</a>
           </li>
           <li class="breadcrumb-item">
-            <a href="#">Library</a>
+            <a routerLink="/">Library</a>
           </li>
           <li class="breadcrumb-item active" aria-current="page">Data</li>
         </ol>
       </nav>
     </article>
+    <router-outlet></router-outlet>
   </div>
-  <router-outlet></router-outlet>
+ 
   

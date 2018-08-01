@@ -1,47 +1,5 @@
-.books{
-    margin: 50px;
-}
-
-.imgBooks{
-    max-width: 200px;
-    max-height: 200px;
-    border: 1px solid lightgrey;
-    margin: 10px;
-    margin: 10px 10px 0px 10px;
-    align-self: center;
-}
-
-
-.card-columns {
-    -webkit-column-count: 4;
-    -moz-column-count: 4;
-    column-count: 4;
-}
-
-.card-columns .card {
-    width: 90%;
-}
-
-.card-img-top {
-    width: 60%;
-}
-
-
-.card-footer{
-    text-align: right;
-}
-
-.card-footer a{
-    padding: 0 2% 0% 2%;
-    color: #868c92;
-}
-
-.card-text:last-child {
-    margin-bottom: 0;
-    display: block;
-    text-overflow: ellipsis;
-    word-wrap: break-word;
-    overflow: hidden;
-    max-height: 3.6em;
-    line-height: 1.3em;
+#contentArticle{
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
 }

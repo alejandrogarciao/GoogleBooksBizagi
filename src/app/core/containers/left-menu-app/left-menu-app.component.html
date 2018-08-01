@@ -1,13 +1,20 @@
-<div id="principalMenu" class="principalMenu">
+<div id="principalMenu" class="principalMenu" [@asideCollapse]="asideState" [ngClass]="(asideState == 'close')? 'aside-close': ''">
   <div id="headerMenu" class="headerMenu">
-    <img class="imageUser" src="http://s3.amazonaws.com/37assets/svn/765-default-avatar.png"/>
-    <span>Oscar Garcia</span>
+    <div style="display:block">
+      <img class="imageUser" [src]="user.urlImage" />
+      <div class="user-info">
+        <h3>{{user.name}} {{user.lastname}}</h3>
+        <span>{{user.email | email}}</span>
+      </div>
+    </div>
+    <span class="user-date">{{today | date:"EEEE, MMMM d, y" | uppercase}}</span>
   </div>
+
   <nav class="navListMenu">
     <ul>
       <li class="rowNav">
         <i class="fas fa-home"></i>
-        <a class="itemNav" routerLink="/" >Inicio</a>
+        <a class="itemNav" routerLink="/">Inicio</a>
       </li>
       <li class="rowNav">
         <i class="fas fa-list-alt"></i>
