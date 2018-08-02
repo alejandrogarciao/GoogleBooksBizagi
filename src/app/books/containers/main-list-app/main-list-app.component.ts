@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {books} from "../../../data-books";
+import { BooksListService } from "../../services/list/books-list.service";
 
 @Component({
   selector: 'main-list-app',
@@ -8,12 +9,20 @@ import {books} from "../../../data-books";
 })
 export class MainListAppComponent implements OnInit {
   booksList:any[];
-  constructor() {
+  constructor(private bookService: BooksListService) {
     this.booksList=[];
    }
 
   ngOnInit() {
-    this.booksList = books.items;
+    this.bookService.getBookList()
+    .subscribe(
+      books => {
+        if (books){
+          this.booksList = books;
+        }
+        
+      }
+    );
   }
 
 }

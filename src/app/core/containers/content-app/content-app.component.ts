@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {books} from "../../../data-books";
+
 
 @Component({
   selector: 'content-app',
@@ -8,13 +8,13 @@ import {books} from "../../../data-books";
 })
 export class ContentAppComponent implements OnInit {
 
-  booksList:any[];
-  constructor() {
-    this.booksList=[];
-   }
+
+
+  constructor() { 
+  }
 
   ngOnInit() {
-    this.booksList = books.items;
   }
+
 
 }
