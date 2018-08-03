@@ -4,6 +4,12 @@
 
 export const environment = {
   production: false
+  /*firebase:{
+    apikey:'AIzaSyAHFEe8D0jwgswHKFYny_C05ZBTrgLY-qQ',
+    authDomain:'bzg-books-app-2-e2c6f.firebaseapp.com',
+    databaseURL:'https://bzg-books-app-2-e2c6f.firebaseio.com/',
+    projectId:'bzg-books-app-2-e2c6f'
+  }*/
 };
 
 /*
