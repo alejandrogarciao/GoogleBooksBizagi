@@ -1,6 +1,7 @@
 import { Component, OnInit, Input  } from '@angular/core';
 import { trigger, state, style, animate, transition } from "@angular/animations";
 import { User } from "../../../auth/models/user";
+import { AuthService } from "../../../auth/services/auth/auth.service";
 
 @Component({
   selector: 'left-menu-app',
@@ -24,7 +25,7 @@ export class LeftMenuAppComponent implements OnInit {
   @Input() asideState:string;
   user: User;
   today: Date;
-  constructor() {
+  constructor(private authService: AuthService) {
     this.today = new Date();
    }
 
@@ -37,5 +38,7 @@ export class LeftMenuAppComponent implements OnInit {
       urlImage: "http://s3.amazonaws.com/37assets/svn/765-default-avatar.png"
     }
   }
-
+  logout(){
+    this.authService.logout();
+  }
 }

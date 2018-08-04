@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from "@angular/router";
 import { AppPipesModule } from "../app-pipes/app-pipes.module";
 import { AlertsModule } from "../alerts/alerts.module";
+import { AuthModule } from "../auth/auth.module";
 import { routes } from "./routes.core";
 import { CoreComponent } from './containers/core';
 import { TopNavAppComponent } from "./containers/top-nav-app/top-nav-app.component";
@@ -19,7 +20,8 @@ import { FavoritesListAppComponent } from "../favorites/containers/favorites-lis
     CommonModule,
     RouterModule.forChild(routes),
     AppPipesModule,
-    AlertsModule
+    AlertsModule,
+    AuthModule
   ],
   declarations: [CoreComponent, LeftMenuAppComponent, TopNavAppComponent,ContentAppComponent,CollectionListAppComponent,FavoritesListAppComponent],
   exports: [CoreComponent]

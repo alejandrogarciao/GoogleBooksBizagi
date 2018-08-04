@@ -3,7 +3,13 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  firebase: {
+    apiKey: 'AIzaSyCuHctOJyQAB8ynqwxZ3wg6QVrYW-hW9p0',
+    authDomain: 'bzg-books-app-2.firebaseapp.com',
+    databaseURL: 'https://bzg-books-app-2.firebaseio.com/',
+    projectId: 'bzg-books-app-2'        
+  }
   /*firebase:{
     apikey:'AIzaSyAHFEe8D0jwgswHKFYny_C05ZBTrgLY-qQ',
     authDomain:'bzg-books-app-2-e2c6f.firebaseapp.com',
