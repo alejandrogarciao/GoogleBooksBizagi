@@ -1,5 +1,5 @@
 <section class="books">
-  <div *ngFor="let book of booksList" class="card-columns">
+  <div *ngFor="let book of booksList?.items" class="card-columns">
 
     <div class="card">
       <img class="rounded mx-auto d-block" [src]="book.volumeInfo.imageLinks.smallThumbnail" alt="Card image cap">
