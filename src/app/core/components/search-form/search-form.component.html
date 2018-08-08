@@ -1,0 +1,19 @@
+
+  <div class="input-group mb-3">
+    <div class="input-group">  
+      <!-- <input type="text" class="form-control" placeholder="Buscar..." aria-label="Recipient's username" aria-describedby="basic-addon2" 
+      #search name="searchBooks" (change)="searchBooks(search.value)"> -->
+      <input type="text" class="form-control searchInput" placeholder="Search" aria-describedby="basic-addon2" #search name="searchBooks" (change)="searchBooks(search.value)">
+      <div class="input-group-append">
+        <span class="input-group-text" id="basic-addon2" (click)="searchBooks(search.value)">
+          <i class="fa fa-search"></i>
+        </span>
+      </div>  
+      
+      <!-- <button class="btn btn-outline-secondary" type="button" (click)="searchBooks(search.value)">
+          <i class="fa fa-search"></i>
+        </button> -->
+    </div>
+  </div>
+
+

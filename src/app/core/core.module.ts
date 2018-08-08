@@ -9,8 +9,9 @@ import { CoreComponent } from './containers/core';
 import { TopNavAppComponent } from "./containers/top-nav-app/top-nav-app.component";
 import { LeftMenuAppComponent } from "./containers/left-menu-app/left-menu-app.component";
 import { ContentAppComponent } from "./containers/content-app/content-app.component";
-import { CollectionListAppComponent } from "../collections/containers/collection-list-app/collection-list-app.component";
-import { FavoritesListAppComponent } from "../favorites/containers/favorites-list-app/favorites-list-app.component";
+import { SearchFormComponent } from './components/search-form/search-form.component';
+// import { CollectionListAppComponent } from "../collections/containers/collection-list-app/collection-list-app.component";
+// import { FavoritesListAppComponent } from "../favorites/containers/favorites-list-app/favorites-list-app.component";
 
 
 
@@ -23,7 +24,7 @@ import { FavoritesListAppComponent } from "../favorites/containers/favorites-lis
     AlertsModule,
     AuthModule
   ],
-  declarations: [CoreComponent, LeftMenuAppComponent, TopNavAppComponent,ContentAppComponent,CollectionListAppComponent,FavoritesListAppComponent],
+  declarations: [CoreComponent, LeftMenuAppComponent, TopNavAppComponent,ContentAppComponent,SearchFormComponent],
   exports: [CoreComponent]
 })
 export class CoreModule { }
