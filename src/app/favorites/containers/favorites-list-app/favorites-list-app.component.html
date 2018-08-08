@@ -1,3 +1,10 @@
-<p>
-  favorites-list-app works!
-</p>
+<section class="container content">
+  <div class="row">
+    <div class="col-12">
+      <h2>Mis Favoritos</h2>
+    </div>
+  </div>
+  <div class="row">
+    <app-card-book *ngFor="let book of bookList | async" [book]="book" class="col-12 col-sm-12 col-md-6 col-lg-3"></app-card-book>
+  </div>
+</section>
