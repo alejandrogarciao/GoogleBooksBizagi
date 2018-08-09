@@ -7,7 +7,7 @@
   <div class="login-box-body">
     <p class="login-box-msg">Sign in to start your session</p>
 
-    <app-login-form></app-login-form>
+    <app-login-form (submitted)="login($event)" (signByGoogle)="signGoogle($event)"></app-login-form>
 
   </div>
   <!-- /.login-box-body -->

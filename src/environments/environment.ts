@@ -6,19 +6,12 @@ export const environment = {
   production: false,
   apiBooks: 'https://www.googleapis.com/books/v1/',
   firebase: {
-    apiKey: 'AIzaSyCuHctOJyQAB8ynqwxZ3wg6QVrYW-hW9p0',
-    authDomain: 'bzg-books-app-2.firebaseapp.com',
-    databaseURL: 'https://bzg-books-app-2.firebaseio.com/',
-    projectId: 'bzg-books-app-2'        
+    apiKey: ' AIzaSyAiXY1uOWUgRNOywlnI5SKINw9FVEp8kP4',
+    authDomain: 'bzGoogFirebase405.firebaseapp.com',
+    databaseURL: 'https://bzGoogFirebase405.firebaseio.com/',
+    projectId: 'bzGoogFirebase405' 
   }
-  /*firebase:{
-    apikey:'AIzaSyAHFEe8D0jwgswHKFYny_C05ZBTrgLY-qQ',
-    authDomain:'bzg-books-app-2-e2c6f.firebaseapp.com',
-    databaseURL:'https://bzg-books-app-2-e2c6f.firebaseio.com/',
-    projectId:'bzg-books-app-2-e2c6f'
-  }*/
 };
-
 /*
  * In development mode, to ignore zone related error stack frames such as
  * `zone.run`, `zoneDelegate.invokeTask` for easier debugging, you can

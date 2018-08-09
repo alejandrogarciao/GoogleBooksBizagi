@@ -1,10 +1,10 @@
 export const environment = {
-  production: true,
+  production: false,
   apiBooks: 'https://www.googleapis.com/books/v1/',
   firebase: {
-    apiKey: 'AIzaSyCuHctOJyQAB8ynqwxZ3wg6QVrYW-hW9p0',
-    authDomain: 'bzg-books-app-2.firebaseapp.com',
-    databaseURL: 'https://bzg-books-app-2.firebaseio.com/',
-    projectId: 'bzg-books-app-2'        
+    apiKey: ' AIzaSyAiXY1uOWUgRNOywlnI5SKINw9FVEp8kP4',
+    authDomain: 'bzGoogFirebase405.firebaseapp.com',
+    databaseURL: 'https://bzGoogFirebase405.firebaseio.com/',
+    projectId: 'bzGoogFirebase405'        
   }
 };
