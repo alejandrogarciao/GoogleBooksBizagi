@@ -4,8 +4,8 @@
       <img class="imageUser" [src]="user?.photoURL" />
       <div class="user-info">
         <h3>{{user?.displayName}}</h3>
-        <span>{{user?.email}}</span>
       </div>
+      <span class="email-user">{{user?.email}}</span>
     </div>
     <span class="user-date">{{today | date:"EEEE, MMMM d, y" | uppercase}}</span>
   </div>
