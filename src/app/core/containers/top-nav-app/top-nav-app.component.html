@@ -9,6 +9,6 @@
     <app-search-form (searchText)="searchText($event)"></app-search-form>
   </div>
   <div id="avatarcontent">
-    <img class="imageUser" src="http://s3.amazonaws.com/37assets/svn/765-default-avatar.png" />
+    <img class="imageUser" [src]="user?.photoURL"/>
   </div>
 </header>
