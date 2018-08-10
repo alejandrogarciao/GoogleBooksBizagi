@@ -18,11 +18,12 @@
           <input type="checkbox"> Remember Me
         </label>
       </div>
+      <div class="col-xs-4">
+          <button [disabled]="!loginForm.form.valid" type="submit" class="btn btn-primary btn-block btn-flat">Sign in me up</button>
+      </div>
     </div>
     <!-- /.col -->
-    <div class="col-xs-4">
-      <button [disabled]="!loginForm.form.valid" type="submit" class="btn btn-primary btn-block btn-flat">Sign In</button>
-    </div>
+    
     <!-- /.col -->
   </div>
 </form>
