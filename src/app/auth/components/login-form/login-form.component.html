@@ -1,44 +1,55 @@
-<form (ngSubmit)="submit()" #loginForm="ngForm">
-  <div class="form-group has-feedback">
-    <input type="email" class="form-control" placeholder="Email" [(ngModel)]="login.email" name="email" #email="ngModel" required>
-    <div [hidden]="email.valid || email.pristine" class="alert alert-danger"  role="alert">
-      Email Incorrecto
-    </div>
-  </div>
-  <div class="form-group has-feedback">
-    <input type="password" class="form-control" placeholder="Password" [(ngModel)]="login.password" name="password" #password="ngModel" required>
-    <div [hidden]="password.valid || password.pristine" class="alert alert-danger" role="alert">
-     Password Incorrecto
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-xs-8">
-      <div class="checkbox icheck">
-        <label>
-          <input type="checkbox"> Remember Me
-        </label>
-      </div>
-      <div class="col-xs-4">
-          <button [disabled]="!loginForm.form.valid" type="submit" class="btn btn-primary btn-block btn-flat">Sign in me up</button>
-      </div>
-    </div>
-    <!-- /.col -->
-    
-    <!-- /.col -->
-  </div>
-</form>
+<div class="row">
 
-<div class="social-auth-links text-center">
-  <p>- OR -</p>
-  <a class="btn btn-block btn-social btn-google btn-flat" (click)="signGoogle()">
-    <i class="fa fa-google-plus"></i> Sign in using Google+
-  </a>
-  <a href="#" class="btn btn-block btn-social btn-facebook btn-flat">
-    <i class="fa fa-facebook"></i> Sign in using Facebook
-  </a>
+  <div class="col" id="login-col-form">
+    <p class="login-box-msg">Sign</p>
+    <form (ngSubmit)="submit()" #loginForm="ngForm">
+      <div class="form-group has-feedback">
+        <input type="email" class="form-control" placeholder="Email" [(ngModel)]="login.email" name="email" #email="ngModel" required>
+        <div [hidden]="email.valid || email.pristine" class="alert alert-danger" role="alert">
+          Email Incorrecto
+        </div>
+      </div>
+      <div class="form-group has-feedback">
+        <input type="password" class="form-control" placeholder="Password" [(ngModel)]="login.password" name="password" #password="ngModel"
+          required>
+        <div [hidden]="password.valid || password.pristine" class="alert alert-danger" role="alert">
+          Password Incorrecto
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-8">
+          <div class="checkbox icheck">
+            <label>
+              <input type="checkbox"> Remember Me
+            </label>
+          </div>
+          <div class="col-xs-4">
+            <button [disabled]="!loginForm.form.valid" type="submit" class="btn btn-primary btn-block btn-flat">Sign in me up</button>
+          </div>
+        </div>
+        <!-- /.col -->
+
+        <!-- /.col -->
+      </div>
+    </form>
+  </div>
+  <div class="vl">
+    <span class="vl-innertext">OR</span>
+  </div>
+
+  <div class="col">
+    <p class="login-box-msg">Sign in with your social network</p>
+    <div></div>
+    <div class="social-auth-links text-center">
+      <a class="google btn" (click)="signGoogle()">
+        <i class="fa fa-google fa-fw"></i> Sign in using Google+
+      </a>
+    </div>
+  </div>
+
 </div>
-<!-- /.social-auth-links -->
 
+<!-- /.social-auth-links -->
 <a href="#">I forgot my password</a>
 <br>
 <a href="register.html" class="text-center">Register a new membership</a>

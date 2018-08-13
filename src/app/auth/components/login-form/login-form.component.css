@@ -1,1 +1,43 @@
-@import"../../../../assets/css/lte_styles.css"
+/*@import"../../../../assets/css/lte_styles.css"*/
+@media screen and (max-width: 650px) {
+    .col {
+      width: 100%;
+      margin-top: 0;
+    }
+    /* hide the vertical line */
+    .vl {
+      display: none;
+    }
+    /* show the hidden text on small screens */
+    .hide-md-lg {
+      display: block;
+      text-align: center;
+    }
+  }
+
+  .google {
+  background-color: #dd4b39;
+  color: white;
+}
+/* vertical line */
+.vl {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    border: 2px solid #ddd;
+    height: 219px;
+  }
+  
+  /* text inside the vertical line */
+  .vl-innertext {
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #f1f1f1;
+    border: 1px solid #ccc;
+    border-radius: 60%;
+    padding: 8px 10px;
+  }
+  div#login-col-form.col{
+    border: 1px solid #ddd
+  }

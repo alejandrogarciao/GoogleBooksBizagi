@@ -1,17 +1,29 @@
 <div class="container">
   <div class="card card-container">
+      
     <div class="login-box">
       <div class="login-logo">
           <img id="profile-img" class="profile-img-card" src="//ssl.gstatic.com/accounts/ui/avatar_2x.png" />
       </div>
       <!-- /.login-logo -->
       <div class="login-box-body">
-        <p class="login-box-msg">Sign</p>
+        
         <app-login-form (submitted)="login($event)" (signByGoogle)="signGoogle($event)"></app-login-form>
       </div>
       
       <!-- /.login-box-body -->
     </div>
     <!-- /.login-box -->
+    <div class="bottom-container">
+        <div class="row">
+          <div class="col">
+            <a href="#" style="color:white" class="btn">Sign up</a>
+          </div>
+          <div class="col">
+            <a href="#" style="color:white" class="btn">Forgot password?</a>
+          </div>
+        </div>
+      </div>
   </div>
+  
 </div>
