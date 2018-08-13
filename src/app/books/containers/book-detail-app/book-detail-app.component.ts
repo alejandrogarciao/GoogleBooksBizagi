@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from "@angular/router";
 import { books } from "../../../data-books";
 import { BooksListService } from "../../services/list/books-list.service";
+import { BookList } from '../../models/books';
 
 @Component({
   selector: 'app-detail-app',
@@ -11,6 +12,7 @@ import { BooksListService } from "../../services/list/books-list.service";
 export class BookDetailAppComponent implements OnInit {
 
   book: any;
+  booksList: BookList;
 
   constructor(private router: ActivatedRoute, private bookService: BooksListService) {
     this.book = {};
@@ -26,6 +28,17 @@ export class BookDetailAppComponent implements OnInit {
           books => {
             if (books) {
               this.book = books;
+
+              this.bookService.searchBooks(books.volumeInfo.authors[0], 3, 3);
+
+              this.bookService.booksList
+              .subscribe(
+                books => {        
+                  if(books){
+                    this.booksList = books;
+                  }        
+                }
+              );
             }
           }
         );
