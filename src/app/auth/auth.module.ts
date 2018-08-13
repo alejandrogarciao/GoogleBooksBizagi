@@ -8,6 +8,7 @@ import { routes } from "./routes.auth";
 import { LoginComponent } from './containers/login/';
 import { LoginFormComponent } from './components/login-form/login-form.component';
 import { environment } from "../../environments/environment";
+import { LoginRegisterComponent } from './components/login-register/';
 
 @NgModule({
   imports: [
@@ -17,6 +18,6 @@ import { environment } from "../../environments/environment";
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule
   ],
-  declarations: [LoginComponent, LoginFormComponent]
+  declarations: [LoginComponent, LoginFormComponent, LoginRegisterComponent]
 })
 export class AuthModule { }
