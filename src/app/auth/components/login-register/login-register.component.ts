@@ -17,8 +17,9 @@ export class LoginRegisterComponent implements OnInit {
   }
   register() {
     this.loading = true;
-    this.authService.create(this.model)
-        .subscribe(
+    this.authService.create(this.model);
+        
+    /*.subscribe(
             data => {
                // this.alertService.success('Registration successful', true);
                 this.router.navigate(['/login']);
@@ -26,6 +27,6 @@ export class LoginRegisterComponent implements OnInit {
             error => {
                // this.alertService.error(error);
                 this.loading = false;
-            });
+            });*/
 }
 }

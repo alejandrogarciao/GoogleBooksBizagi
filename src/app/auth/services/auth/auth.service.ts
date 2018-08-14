@@ -55,8 +55,14 @@ export class AuthService {
       .then((res) => this.router.navigate(['/login']));
   }
 
-  create(user: User) {
-    return this.http.post('/api/users', user);
+  create(user: Auth) {
+    return  this.authFire.auth.createUserWithEmailAndPassword(user.email, user.password).catch(function(error) {
+      // Handle Errors here.
+      var errorCode = error.code;
+      var errorMessage = error.message;
+      // ...
+    });
+    //return this.http.post('/api/users', user);
   }
 
 }
