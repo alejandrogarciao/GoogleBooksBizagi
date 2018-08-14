@@ -27,7 +27,9 @@ export class BooksListService {
       .subscribe(
         user => {
           this.user = user;
-          this.favsRef = rdb.list('favorites/' + this.user.uid);
+          if(this.user){
+            this.favsRef = rdb.list('favorites/' + this.user.uid);
+          }
         }
       );
   }

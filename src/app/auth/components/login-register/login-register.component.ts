@@ -17,16 +17,15 @@ export class LoginRegisterComponent implements OnInit {
   }
   register() {
     this.loading = true;
-    this.authService.create(this.model);
-        
-    /*.subscribe(
-            data => {
-               // this.alertService.success('Registration successful', true);
-                this.router.navigate(['/login']);
-            },
-            error => {
-               // this.alertService.error(error);
-                this.loading = false;
-            });*/
+    this.authService.create(this.model)
+    .then(
+      auth => {
+        this.router.navigate(['/login']); 
+      },
+      error => {
+        alert(error.message);
+        this.loading = false;
+      }
+    );
 }
 }
