@@ -1,3 +1,26 @@
-<p>
-  collection-list-app works!
-</p>
+<app-alerts-messages></app-alerts-messages>
+<div id="contentArticle">    
+    <article>
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item">
+            <a routerLink="/">Home</a>
+          </li>
+          <li class="breadcrumb-item">
+            <a routerLink="/">Library</a>
+          </li>
+          <li class="breadcrumb-item active" aria-current="page">Data</li>
+        </ol>
+      </nav>
+      <section class="container content">
+        <div class="row">
+          <div class="col-12">
+            <h2>Mis Favoritos</h2>
+          </div>
+        </div>
+        <div class="row">
+          <app-card-book *ngFor="let book of bookList | async" [book]="book" class="col-12 col-sm-12 col-md-6 col-lg-3"></app-card-book>
+        </div>
+      </section>
+    </article>
+  </div>

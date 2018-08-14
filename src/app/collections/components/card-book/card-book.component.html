@@ -1,0 +1,12 @@
+
+
+<div class="card">
+  <img class="rounded mx-auto d-block" [src]="book.volumeInfo.imageLinks.smallThumbnail" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title">{{book.volumeInfo.title}}</h5>
+    <p class="card-text"> {{book.volumeInfo.description}}</p>
+  </div>
+  <div class="card-footer">
+    <a class="col-12 col-md-auto col-lg-auto btn btn-primary" [routerLink]="['../../books/detail', book.id]">Ver Detalle</a>
+  </div>
+</div>

@@ -10,22 +10,37 @@ import { BookList } from '../../models';
   styleUrls: ['./main-list-app.component.css']
 })
 export class MainListAppComponent implements OnInit {
-
+  display = "none";
+  idBookCat = "";
   booksList: BookList;
-
-  constructor(private bookService: BooksListService) { 
+  constructor(private bookService: BooksListService) {
     this.bookService.searchBooks('Colombia');
   }
-
-  ngOnInit() {    
+  ngOnInit() {
     this.bookService.booksList
-    .subscribe(
-      books => {        
-        if(books){
-          this.booksList = books;
-        }        
-      }
-    );
+      .subscribe(
+        books => {
+          if (books) {
+            this.booksList = books;
+          }
+        }
+      );
   }
 
+  openModal(idBook:string) {
+    this.display="block"; 
+    this.idBookCat= idBook;
+  }
+
+  onCloseHandled() {
+    this.display="none"; 
+    this.idBookCat= "";
+  }
+
+  addBookToCategory(idCategory:string){
+    console.log("idBook: " +  this.idBookCat + " - " + "idCategory: " + idCategory);
+    this.display="none"; 
+  }
+
+ 
 }

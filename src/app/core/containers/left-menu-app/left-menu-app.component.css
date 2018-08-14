@@ -10,6 +10,22 @@
   margin-left: 67px;
   margin-top: 5px;
 }
+.aside-close .user-info .user-image{
+  width:30px;
+  height: 30px;
+}
+           
+.aside-close .navListMenu ul{
+  padding-left: 16px;
+}
+
+.aside-close .itemNav{
+  display: none;
+}
+
+.aside-close div{
+  display: none;
+}
 
 .email-user{
   font-size: .9em;
@@ -25,7 +41,8 @@
   font-family: serif;
 }
 .user-info h3 {
-  padding: 0px 0px 0px 0px;
+  padding: 2px 0px 0px 0px;
+  min-height: 40px;
   font-size: 20px;
   color: #093292f5;
   color: white;
