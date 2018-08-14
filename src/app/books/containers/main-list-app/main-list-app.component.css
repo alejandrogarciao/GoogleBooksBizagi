@@ -39,6 +39,7 @@
 .card-footer a{
     padding: 0 2% 0% 2%;
     color: #868c92;
+    cursor: pointer !important;
 }
 
 .card-text:last-child {
@@ -49,4 +50,34 @@
     overflow: hidden;
     max-height: 3.6em;
     line-height: 1.3em;
+}
+
+
+/*Modal window*/
+.backdrop{ 
+    background-color:rgba(0,0,0,0.6);  
+    position:fixed;   
+    top:0;   
+    left:0;    
+    width:100%;
+    height:100vh;
+}
+
+.modal-dialog {
+    top: 200px;
+}
+
+.modal-body {
+    padding: 0rem 1rem 0rem 1rem;
+}
+
+.modal-header {
+    padding: 0.2rem 0.8rem 0.3rem 1rem;
+}
+
+.modal-footer {
+    padding: 0.5rem 1rem;
+}
+.input-group-text{
+    cursor: pointer;
 }

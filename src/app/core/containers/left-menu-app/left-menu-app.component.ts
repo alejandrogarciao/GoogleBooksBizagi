@@ -2,7 +2,7 @@ import { Component, OnInit, Input  } from '@angular/core';
 import { trigger, state, style, animate, transition } from "@angular/animations";
 //import { User } from "../../../auth/models/user";
 import { AuthService } from "../../../auth/services/auth/auth.service";
-import { User } from "firebase/app";
+import { User } from "firebase";
 import { AngularFireAuth } from "angularfire2/auth";
 
 @Component({
@@ -15,7 +15,7 @@ import { AngularFireAuth } from "angularfire2/auth";
         width: "50px"        
       })),
       state('open', style({
-        width: "300px"
+        width: "230px"
       })),
       transition('open => close', animate('100ms ease-out')),
       transition('close => open', animate('100ms ease-in'))
@@ -33,13 +33,7 @@ export class LeftMenuAppComponent implements OnInit {
    }
 
   ngOnInit() {
-  /*  this.user = {
-      name: "usuario",
-      lastname: "prueba",
-      username: "pruebaUser",
-      email: "usuario@prueba.com",
-      urlImage: "http://s3.amazonaws.com/37assets/svn/765-default-avatar.png"
-    }*/
+
     this.authFire.authState
     .subscribe(
       user => {        

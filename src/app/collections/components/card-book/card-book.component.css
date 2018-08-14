@@ -1,0 +1,19 @@
+.card {
+    border-radius: 2px 2px 0px 0px;
+    box-shadow: 5px 5px 5px #4d5380;
+    padding: 1em 0 0 0;
+}
+
+.card-footer{
+    text-align: right;
+}
+
+.card-text {
+    margin-bottom: 0;
+    display: block;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+    overflow: hidden;
+    max-height: 3.6em;
+    line-height: 1.3em;
+}
