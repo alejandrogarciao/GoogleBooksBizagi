@@ -28,4 +28,8 @@ export class MainListAppComponent implements OnInit {
     );
   }
 
+  addFavorite(book: any){
+    this.bookService.addFavorites(book);
+  }
+
 }

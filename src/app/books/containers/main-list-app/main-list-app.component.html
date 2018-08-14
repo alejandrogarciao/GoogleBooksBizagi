@@ -8,7 +8,7 @@
         <p class="card-text"> {{book.volumeInfo.description}}</p>
       </div>
       <div class="card-footer">
-        <a [routerLink]="['../detail', book.id]">
+        <a href="javascript:;" (click)="addFavorite(book)" alt="Agregar a favoritos">
           <i class="fas fa-heart"></i>
         </a>
         <a [routerLink]="['../detail', book.id]">
