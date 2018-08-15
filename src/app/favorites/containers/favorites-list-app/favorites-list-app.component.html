@@ -4,7 +4,7 @@
       <h2>Mis Favoritos</h2>
     </div>
   </div>
-  <div class="row">
-    <app-card-book *ngFor="let book of bookList | async" [book]="book" class="col-12 col-sm-12 col-md-6 col-lg-3"></app-card-book>
+  <div class="row justify-content-around">
+    <app-card-book *ngFor="let book of bookList | async" [book]="book" class="col"></app-card-book>
   </div>
 </section>
