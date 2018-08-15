@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Auth, IAuth } from "../../models";
 import { Router } from "@angular/router";
 import { AuthService } from "../../services/auth/auth.service";
+import {MatSnackBar} from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-login-register',
@@ -11,7 +12,7 @@ import { AuthService } from "../../services/auth/auth.service";
 export class LoginRegisterComponent implements OnInit {
   model: any = {};
   loading = false;
-  constructor(private authService: AuthService, private router: Router) { }
+  constructor(private authService: AuthService, private router: Router, public snackBar: MatSnackBar) { }
 
   ngOnInit() {
   }

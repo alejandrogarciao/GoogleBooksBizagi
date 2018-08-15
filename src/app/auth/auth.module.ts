@@ -9,6 +9,7 @@ import { LoginComponent } from './containers/login/';
 import { LoginFormComponent } from './components/login-form/login-form.component';
 import { environment } from "../../environments/environment";
 import { LoginRegisterComponent } from './components/login-register/';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 @NgModule({
   imports: [
@@ -16,7 +17,8 @@ import { LoginRegisterComponent } from './components/login-register/';
     RouterModule.forChild(routes),
     FormsModule,
     AngularFireModule.initializeApp(environment.firebase),
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    MatSnackBarModule
   ],
   declarations: [LoginComponent, LoginFormComponent, LoginRegisterComponent]
 })

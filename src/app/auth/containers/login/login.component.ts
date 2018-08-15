@@ -4,6 +4,7 @@ import { auth } from 'firebase';
 import { IAuth } from '../../models';
 import { AuthService } from "../../services/auth/auth.service";
 import { Router } from "@angular/router";
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 
 @Component({
@@ -13,7 +14,7 @@ import { Router } from "@angular/router";
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private authService: AuthService, private router: Router, private zone: NgZone) { }
+  constructor(private authService: AuthService, private router: Router, private zone: NgZone, private snackBar: MatSnackBar) { }
 
   ngOnInit() {
     
@@ -27,7 +28,9 @@ export class LoginComponent implements OnInit {
         this.router.navigate(['main']);
       },
       error => {
-        alert(error.message);
+        this.snackBar.open(error.message,"FAIL",{
+          duration:2000
+        })
       }
     );
   }
