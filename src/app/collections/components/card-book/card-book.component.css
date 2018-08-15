@@ -6,8 +6,16 @@
     display: block;
 }
 
+a {
+    color: black;
+    font-size: 20px;
+}
+
 .card-footer{
     text-align: right;
+}
+.icon-footer{
+    margin-right: 20px;
 }
 
 .card-body {

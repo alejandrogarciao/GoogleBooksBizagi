@@ -19,7 +19,7 @@ import { AngularFireDatabaseModule } from "angularfire2/database";
     AppComponent  
   ],
   imports: [
-    AngularFireModule.initializeApp(environment.firebase, 'bzgoogfirebase405'),
+    AngularFireModule.initializeApp(environment.firebase, 'bizagibooks'),
     AngularFireAuthModule,
     AngularFireDatabaseModule,
     BrowserModule,

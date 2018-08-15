@@ -34,9 +34,6 @@ export class MainListAppComponent implements OnInit {
         this.user = user;
         this.categoriesList = this.rdb.list('/collections/' + this.user.uid + "/").valueChanges();
         let listCateg = this.rdb.list('/collections/' + this.user.uid + "/");
-        debugger;
-        console.log("collsRef: " + this.categoriesList);
-        console.log("collsRef: " + listCateg);
       }
     );
   }

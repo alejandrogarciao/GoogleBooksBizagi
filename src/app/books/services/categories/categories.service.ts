@@ -24,8 +24,6 @@ export class CategoriesService {
         user => {
           this.user = user;
           this.catRef = rdb.list('collections/' + this.user.uid);
-          debugger;
-          console.log("collections: " + this.catRef);
         }
       );
      }

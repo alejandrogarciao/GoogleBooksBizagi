@@ -7,6 +7,12 @@
     <p class="card-text"> {{book.volumeInfo.description}}</p>
   </div>
   <div class="card-footer">
-    <a class="col-12 col-md-auto col-lg-auto btn btn-primary" [routerLink]="['../../books/detail', book.id]">Ver Detalle</a>
+    <!-- <a class="col-12 col-md-auto col-lg-auto btn btn-primary" [routerLink]="['../../books/detail', book.id]">Ver Detalle</a> -->
+    <a class="icon-footer">
+        <i class="fas fa-trash"></i>
+      </a>
+      <a   class="icon-footer"[routerLink]="['../../books/detail', book.id]">
+        <i class="fas fa-file-alt"></i>
+      </a>
   </div>
 </div>

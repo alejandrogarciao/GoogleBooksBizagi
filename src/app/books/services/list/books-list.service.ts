@@ -39,8 +39,6 @@ export class BooksListService {
         user => {
           this.user = user;
           this.collsRef = rdb.list('collections/' + this.user.uid + "/" + "2" );
-          debugger;
-          console.log("collsRef: " + this.collsRef);
         }
       );
   }
