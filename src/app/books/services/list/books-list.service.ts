@@ -8,6 +8,7 @@ import * as firebase from "firebase/app";
 import { MessagesService } from "../../../alerts/services/messages.service";
 import { environment } from "../../../../environments/environment";
 import { BookList } from "../../models/books";
+import { category } from "../../models/category";
 
 
 @Injectable({
@@ -71,10 +72,11 @@ export class BooksListService {
 
   }  
 
-  addCollections(collection: any) {
-    const promise = this.collsRef.push(collection);
+  addCollections(category:string,book: any) {
+
+    const promise = this.collsRef.push(book);
     promise.then(_ => this.alertService.message("Adding to collection", "success"));
-    console.log("collection: " +  collection);
+    console.log("collection: " +  book);
   }  
 
   getBook(id: string): Observable<any> {

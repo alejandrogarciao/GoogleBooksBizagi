@@ -11,7 +11,8 @@ import { BookList } from '../../models';
 })
 export class MainListAppComponent implements OnInit {
   display = "none";
-  idBookCat = "";
+  value:string;
+  book:any;
   booksList: BookList;
   @Input() collection:any;
   @Output() pushCollection = new EventEmitter<any>();
@@ -34,18 +35,19 @@ export class MainListAppComponent implements OnInit {
     this.bookService.addFavorites(book);
   }
 
-  openModal(idBook:string) {
+  openModal(book: any) {
     this.display="block"; 
-    this.idBookCat = idBook;
+    this.book = book;
   }
 
   onCloseHandled() {
     this.display="none"; 
-    this.idBookCat= "";
   }
 
-  addBookToCategory(idCategory:string){
-    this.pushCollection.emit(idCategory+"-"+this.idBookCat);
+  addBookToCategory(nameCategory:string){
+    console.log(this.value);
+    this.bookService.addCollections(nameCategory,this.book);
+    //this.pushCollection.emit(nameCategory+"/"+this.book);
     this.display="none";
     /*
     console.log("idBook: " +  this.idBookCat + " - " + "idCategory: " + idCategory);

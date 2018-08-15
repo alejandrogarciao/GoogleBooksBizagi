@@ -11,7 +11,7 @@
         <a href="javascript:;" (click)="addFavorite(book)" alt="Agregar a favoritos">
           <i class="fas fa-heart"></i>
         </a>
-        <a (click)="openModal(book.id)">
+        <a (click)="openModal(book)">
           <i class="fas fa-bars"></i>
         </a>
         <a [routerLink]="['../detail', book.id]">
@@ -36,9 +36,9 @@
            <div class="input-group mb-3">
              <select class="custom-select" id="inputGroupCategory">
                <option selected>Choose...</option>
-               <option value="1">Software</option>
-               <option value="2">Fantasy</option>
-               <option value="3">Games</option>
+               <option [value]="Software">Software</option>
+               <option [value]="Fantasy">Fantasy</option>
+               <option [value]="Games">Games</option>
              </select>
              <div class="input-group-append">
                <label class="input-group-text" for="inputGroupCategory" (click)="addBookToCategory('2')">Add</label>
