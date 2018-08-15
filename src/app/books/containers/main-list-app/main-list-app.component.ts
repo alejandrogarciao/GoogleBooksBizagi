@@ -30,6 +30,10 @@ export class MainListAppComponent implements OnInit {
       );
   }
 
+  addFavorite(book: any){
+    this.bookService.addFavorites(book);
+  }
+
   openModal(idBook:string) {
     this.display="block"; 
     this.idBookCat = idBook;

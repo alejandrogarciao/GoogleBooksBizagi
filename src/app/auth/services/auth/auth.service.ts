@@ -62,7 +62,7 @@ export class AuthService {
       var errorMessage = error.message;
       // ...
     });
-    //return this.http.post('/api/users', user);
+    
   }
 
 }
