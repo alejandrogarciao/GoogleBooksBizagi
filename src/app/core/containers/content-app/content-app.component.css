@@ -3,3 +3,6 @@
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
 }
+#contentArticle article{
+    position: relative;
+}

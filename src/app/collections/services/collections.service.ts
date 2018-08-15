@@ -19,7 +19,7 @@ export class CollectionsService {
       .subscribe(
         user => {
           this.user = user;
-          this.collsRef = rdb.list('collections/' + this.user.uid + '/2');
+          this.collsRef = rdb.list('collections/' + this.user.uid + '/Software');
         }
       );
     

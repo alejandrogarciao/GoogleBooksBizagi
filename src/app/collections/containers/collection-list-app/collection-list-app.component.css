@@ -3,3 +3,14 @@
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
 }
+
+.list-content{
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.row{
+    display: block;
+    margin: 10px;
+}
