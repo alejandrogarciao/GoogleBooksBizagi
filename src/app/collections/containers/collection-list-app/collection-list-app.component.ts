@@ -20,6 +20,7 @@ export class CollectionListAppComponent implements OnInit {
     private rdb: AngularFireDatabase) { }
 
   ngOnInit() {
+
     this.authFire.authState
       .subscribe(
         user => {          

@@ -18,6 +18,7 @@ export class BooksListService {
   url = environment.apiBooks;
   booksList: Subject<BookList> = new Subject();
   favsRef: AngularFireList<any>;
+  collsRef: AngularFireList<any>;
   user: firebase.User;
 
   constructor(private http: HttpClient, private alertService: MessagesService, private authFire: AngularFireAuth,
@@ -28,6 +29,15 @@ export class BooksListService {
         user => {
           this.user = user;
           this.favsRef = rdb.list('favorites/' + this.user.uid);
+        }
+      );
+    
+    this.booksList.next({ kind: "", totalItems: 0, items: [] });
+    authFire.authState
+      .subscribe(
+        user => {
+          this.user = user;
+          this.collsRef = rdb.list('collections/' + this.user.uid + "/" + "2" );
         }
       );
   }
@@ -57,6 +67,12 @@ export class BooksListService {
     const promise = this.favsRef.push(book);
     promise.then(_ => this.alertService.message("Agregado a Favoritos", "success"));
 
+  }  
+
+  addCollections(collection: any) {
+    const promise = this.collsRef.push(collection);
+    promise.then(_ => this.alertService.message("Adding to collection", "success"));
+    console.log("collection: " +  collection);
   }  
 
   getBook(id: string): Observable<any> {

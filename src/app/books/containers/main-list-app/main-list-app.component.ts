@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 //import { books } from "../../../data-books";
 import { BooksListService } from "../../services/list/books-list.service";
 import { BookList } from '../../models';
@@ -13,6 +13,9 @@ export class MainListAppComponent implements OnInit {
   display = "none";
   idBookCat = "";
   booksList: BookList;
+  @Input() collection:any;
+  @Output() pushCollection = new EventEmitter<any>();
+
   constructor(private bookService: BooksListService) {
     this.bookService.searchBooks('Colombia');
   }
@@ -29,7 +32,7 @@ export class MainListAppComponent implements OnInit {
 
   openModal(idBook:string) {
     this.display="block"; 
-    this.idBookCat= idBook;
+    this.idBookCat = idBook;
   }
 
   onCloseHandled() {
@@ -38,8 +41,12 @@ export class MainListAppComponent implements OnInit {
   }
 
   addBookToCategory(idCategory:string){
+    this.pushCollection.emit(idCategory+"-"+this.idBookCat);
+    this.display="none";
+    /*
     console.log("idBook: " +  this.idBookCat + " - " + "idCategory: " + idCategory);
-    this.display="none"; 
+     
+    */
   }
 
  
