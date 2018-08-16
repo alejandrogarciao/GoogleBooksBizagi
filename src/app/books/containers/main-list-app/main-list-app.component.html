@@ -53,8 +53,7 @@
                 <option *ngFor="let cat of categoriesList | async" [value]="cat.key">{{cat.key}}</option>
               </select>
               <div class="input-group-append">
-                <label class="input-group-text" for="inputGroupCategory" (click)="addBookToCategory(cate)">Add</label>
-                <span>{{categorySelected}}</span>
+                <label class="input-group-text" for="inputGroupCategory" (click)="addBookToCategory(categorySelected)">Add</label>
               </div>
             </div>
             <div class="input-group mb-3">
@@ -62,7 +61,6 @@
               <input #newCat type="text" class="form-control">
               <div class="input-group-append">
                 <label class="input-group-text" for="inputGroupCategory" (click)="addBookToCategory(newCat.value)">Add New</label>
-                <span>{{categorySelected}}</span>
               </div>
             </div>
           </div>
