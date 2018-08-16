@@ -17,6 +17,7 @@ export class MainListAppComponent implements OnInit {
   display = "none";
   value: string;
   book: any;
+  imagePath:string = "assets/empty.jpg";
   categorySelected: string = "";
   booksList: BookList;
   categoriesList: Observable<any[]>;

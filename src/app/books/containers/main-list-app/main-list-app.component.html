@@ -1,61 +1,79 @@
 <section class="books">
-  <div *ngFor="let book of booksList?.items" class="card-columns">
+  <div *ngFor="let book of booksList?.items"  class="card-columns">
+    <div *ngIf="book; then card"></div>
+    <ng-template #card>
+      <div class="card">
+        <!-- <img  class="rounded mx-auto d-block"  [src]="book.volumeInfo.imageLinks.smallThumbnail" alt="Card image cap"> -->
+        <div *ngIf="book.volumeInfo.imageLinks; then link else localImage  ">
+        </div>
+        <ng-template #link>
+          <img class="rounded mx-auto d-block" [src]="book.volumeInfo.imageLinks.smallThumbnail" alt="Card image cap">
+        </ng-template>
+        <ng-template #localImage>
+          <img class="rounded mx-auto d-block" [src]="assets/empty.jpg" alt="Card image cap">
+        </ng-template>
+        <!-- <ng-template #link></ng-template>
+      <ng-template #local><img class="rounded mx-auto d-block"  [src]="./books/image/empty.jpg" alt="Card image cap"></ng-template>  -->
 
-    <div class="card">
-      <img class="rounded mx-auto d-block" [src]="book.volumeInfo.imageLinks.smallThumbnail" alt="Card image cap">
-      <div class="card-body">
-        <h5 class="card-title">{{book.volumeInfo.title}}</h5>
-        <p class="card-text"> {{book.volumeInfo.description}}</p>
-      </div>
-      <div class="card-footer">
-        <a href="javascript:;" (click)="addFavorite(book)" alt="Agregar a favoritos">
-          <i class="fas fa-heart"></i>
-        </a>
-        <a (click)="openModal(book)">
-          <i class="fas fa-bars"></i>
-        </a>
-        <a [routerLink]="['../detail', book.id]">
-          <i class="fas fa-file-alt"></i>
-        </a>
+        <div class="card-body">
+          <h5 class="card-title">{{book.volumeInfo.title}}</h5>
+          <p class="card-text"> {{book.volumeInfo.description}}</p>
+        </div>
+        <div class="card-footer">
+          <a href="javascript:;" (click)="addFavorite(book)" alt="Agregar a favoritos">
+            <i class="fas fa-heart"></i>
+          </a>
+          <a (click)="openModal(book)">
+            <i class="fas fa-bars"></i>
+          </a>
+          <a [routerLink]="['../detail', book.id]">
+            <i class="fas fa-file-alt"></i>
+          </a>
 
+        </div>
       </div>
-    </div>
+    </ng-template>
   </div>
   <!-- Modal section -->
- <div class="backdrop" [ngStyle]="{'display':display}"></div>
- <div class="modal" tabindex="-1" role="dialog"  [ngStyle]="{'display':display}">   
-   <div class="modal-dialog" role="document"> 
-     <div class="modal-content">
-       <div class="modal-header">
-         <button type="button" class="close" aria-label="Close" (click)="onCloseHandled()"><span aria-hidden="true">&times;</span></button>
-       </div>         
-       <div class="modal-body"> 
-         <div id="coll-category" class="hidden">
-           <h1>Add to Category</h1>
-           <hr>
-           <div class="input-group mb-3">
-             <select [(ngModel)]="categorySelected" class="custom-select">
-                <option *ngFor="let cat of categoriesList | async" [value]="cat.key" >{{cat.key}}</option>
-             </select>
-             <div class="input-group-append">
-               <label class="input-group-text" for="inputGroupCategory" (click)="addBookToCategory(cate)">Add</label>
-               <span>{{categorySelected}}</span>
-             </div>   
-           </div>
-           <div class="input-group mb-3">
-             
+  <div class="backdrop" [ngStyle]="{'display':display}"></div>
+  <div class="modal" tabindex="-1" role="dialog" [ngStyle]="{'display':display}">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" aria-label="Close" (click)="onCloseHandled()">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div id="coll-category" class="hidden">
+            <h1>Add to Category</h1>
+            <hr>
+            <div class="input-group mb-3">
+              <select [(ngModel)]="categorySelected" class="custom-select">
+                <option *ngFor="let cat of categoriesList | async" [value]="cat.key">{{cat.key}}</option>
+              </select>
+              <div class="input-group-append">
+                <label class="input-group-text" for="inputGroupCategory" (click)="addBookToCategory(cate)">Add</label>
+                <span>{{categorySelected}}</span>
+              </div>
+            </div>
+            <div class="input-group mb-3">
+
               <input #newCat type="text" class="form-control">
               <div class="input-group-append">
-                  <label class="input-group-text" for="inputGroupCategory" (click)="addBookToCategory(newCat.value)">Add New</label>
-                  <span>{{categorySelected}}</span>
-                </div> 
+                <label class="input-group-text" for="inputGroupCategory" (click)="addBookToCategory(newCat.value)">Add New</label>
+                <span>{{categorySelected}}</span>
+              </div>
             </div>
-         </div>
-       </div> 
-       <div class="modal-footer"> 
-         <button type="button" class="btn btn-default" (click)="onCloseHandled()" >Close</button>
-       </div>
-     </div><!-- /.modal-content -->
-   </div><!-- /.modal-dialog -->
- </div><!-- /.modal !-->
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" (click)="onCloseHandled()">Close</button>
+        </div>
+      </div>
+      <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+  </div>
+  <!-- /.modal !-->
 </section>
