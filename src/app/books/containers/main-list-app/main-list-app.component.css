@@ -1,7 +1,8 @@
 .books{
     margin: 40px;
     columns: 4;
-    margin: 10px 0px 0px 30px;
+    margin: 20px 20px 0px 30px;
+    width: 97%;
 }
 
 .imgBooks{
@@ -19,6 +20,7 @@
     -moz-column-count: 1;
     column-count: 1;
     margin-bottom: 20px;
+    margin-left: 20px;
 } 
 
 .card-columns .card {
