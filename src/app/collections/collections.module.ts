@@ -5,12 +5,13 @@ import { routes } from "./routes.collections";
 import { CollectionListAppComponent } from './containers/collection-list-app/collection-list-app.component'
 import { AlertsModule } from "../alerts/alerts.module";
 import { CardBookComponent } from './components/card-book/card-book.component';
-
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   imports: [
     CommonModule,
     AlertsModule,
-    RouterModule.forChild(routes)
+    RouterModule.forChild(routes),
+    FormsModule
   ],
   declarations: [CollectionListAppComponent,CardBookComponent]
 })

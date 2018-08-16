@@ -8,12 +8,27 @@
 
 
 .list-content{
-    margin-top: 20px;
+    /* margin-top: 20px; */
     margin-left: 20px;
-    margin-right: 20px;
+    /* margin-right: 20px; */
+    display: inline-block;
+    position: absolute;
+    top: 150px;
+    left: 250px;
 }
 
 .row{
     display: block;
     margin: 10px;
+}
+
+.select-category{
+    display: -ms-flexbox;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    position: fixed;
+    width: 50%;
+    top: 95px;
+    right: 15px;
 }

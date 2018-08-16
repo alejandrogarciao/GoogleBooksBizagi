@@ -70,14 +70,12 @@ export class BooksListService {
 
   addCollections(category:string,book: any) {
     if(this.user){
-      this.collsRef = this.db.list('collections/' + this.user.uid + "/" + category);
+      this.collsRef = this.db.list(`/collections/${this.user.uid}/${category}`);
       const promise = this.collsRef.push(book);
       promise.then(_ => this.alerts.message("Adding to collection", "success"));
     }else{
       this.alerts.message("Adding to collection", "error");
-    }
-    
-
+    } 
   }  
 
   getBook(id: string): Observable<any> {

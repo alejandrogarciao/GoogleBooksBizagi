@@ -1,8 +1,18 @@
 <section class="list-content">
   <div>
-      <h2>Collections</h2>
+    <h2 style="position:relative;">Collections</h2>
   </div>
   <div class="row">
-    <app-card-book *ngFor="let book of bookList | async" [book]="book" class="col-12 col-sm-12 col-md-6 col-lg-3"></app-card-book>
+      <div class="select-category">
+          <div class="input-group mb-3">
+            <select [(ngModel)]="collectionCategory" class="custom-select" (change)="getListByCategory(collectionCategory)">
+              <option *ngFor="let cat of categoriesList" [selected]="cat.key === cat.key" [value]="cat.key">{{cat.key}}</option>
+            </select>
+            <!-- <div class="input-group-append">
+              <label class="input-group-text" for="inputGroupCategory" (click)="getListByCategory(collectionCategory)">Go</label>
+            </div> -->
+          </div>
+        </div>
+    <app-card-book *ngFor="let book of bookList | async" [book]="book" [nameCategory]="collectionCategory" class="col-12 col-sm-12 col-md-6 col-lg-3"></app-card-book>
   </div>
 </section>
