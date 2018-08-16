@@ -20,6 +20,7 @@ export class LoginComponent implements OnInit {
   }
   login(event : IAuth){
     //
+    this.error="";
     this.authService.login(event)
     .then(
       auth => {
