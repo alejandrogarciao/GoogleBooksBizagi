@@ -24,8 +24,9 @@ export class CollectionListAppComponent implements OnInit {
     this.authFire.authState
       .subscribe(
         user => {          
-          this.bookList = this.rdb.list('collections/' + user.uid + '/2').valueChanges();
+          this.bookList = this.rdb.list('collections/' + user.uid+ '/').valueChanges();
         }
+        //Oscar todo
       );
   }
 
