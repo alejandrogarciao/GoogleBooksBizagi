@@ -4,9 +4,8 @@ import { auth } from 'firebase';
 import { IAuth } from '../../models';
 import { AuthService } from "../../services/auth/auth.service";
 import { Router } from "@angular/router";
-import { MatSnackBar } from '@angular/material/snack-bar';
-
-
+import {MatSnackBar} from '@angular/material';
+import { MessagesService } from "../../../alerts/services/messages.service";
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -14,7 +13,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private authService: AuthService, private router: Router, private zone: NgZone, private snackBar: MatSnackBar) { }
+  constructor(private authService: AuthService, private router: Router, private zone: NgZone, private snackBar: MatSnackBar,private alertService: MessagesService) { }
 
   ngOnInit() {
     
@@ -28,9 +27,10 @@ export class LoginComponent implements OnInit {
         this.router.navigate(['main']);
       },
       error => {
-        this.snackBar.open(error.message,"FAIL",{
-          duration:2000
-        })
+        /*this.snackBar.open(error.message, "fail", {
+          duration: 2000,
+        });*/
+        this.alertService.message(error.message,"error");
       }
     );
   }
