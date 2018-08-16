@@ -1,9 +1,10 @@
 .alert {
-    position: relative;
-    padding: 0.75rem 1.25rem;
+    position: fixed;
+    padding: .75rem 1.25rem;
     margin-bottom: 1rem;
     border: 1px solid transparent;
-    border-radius: 0.25rem;
-    top: 90px;
-    left: 230px;
+    border-radius: .25rem;
+    bottom: 0px;
+    right: 0px;
+    z-index: 20000;
 }

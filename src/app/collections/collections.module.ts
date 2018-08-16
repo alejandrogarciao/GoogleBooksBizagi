@@ -6,6 +6,7 @@ import { CollectionListAppComponent } from './containers/collection-list-app/col
 import { AlertsModule } from "../alerts/alerts.module";
 import { CardBookComponent } from './components/card-book/card-book.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CategoryComponent } from './components/category/category.component'
 @NgModule({
   imports: [
     CommonModule,
@@ -13,6 +14,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     RouterModule.forChild(routes),
     FormsModule
   ],
-  declarations: [CollectionListAppComponent,CardBookComponent]
+  declarations: [CollectionListAppComponent,CardBookComponent,CategoryComponent]
 })
 export class CollectionsModule { }

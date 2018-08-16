@@ -50,7 +50,7 @@
             <hr>
             <div class="input-group mb-3">
               <select [(ngModel)]="categorySelected" class="custom-select">
-                <option *ngFor="let cat of categoriesList | async" [value]="cat.key">{{cat.key}}</option>
+                <option *ngFor="let cat of categoriesList | async" [selected]="cat.key === cat.key" [value]="cat.key">{{cat.key}}</option>
               </select>
               <div class="input-group-append">
                 <label class="input-group-text" for="inputGroupCategory" (click)="addBookToCategory(categorySelected)">Add</label>
