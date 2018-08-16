@@ -34,16 +34,22 @@
            <h1>Add to Category</h1>
            <hr>
            <div class="input-group mb-3">
-             <select class="custom-select" [ngModel]="selectedValue" >
-                <option [value]="Software" selected>Software</option>
-                <option [value]="Fantasy">Fantasy</option>
-                <option [value]="Games">Games</option>
-                <option *ngFor="let cat of categoriesList | async" >{{cat}}</option>
+             <select [(ngModel)]="categorySelected" class="custom-select">
+                <option *ngFor="let cat of categoriesList | async" [value]="cat.key" >{{cat.key}}</option>
              </select>
              <div class="input-group-append">
-               <label class="input-group-text" for="inputGroupCategory" (click)="addBookToCategory('2')">Add</label>
+               <label class="input-group-text" for="inputGroupCategory" (click)="addBookToCategory(cate)">Add</label>
+               <span>{{categorySelected}}</span>
              </div>   
            </div>
+           <div class="input-group mb-3">
+             
+              <input #newCat type="text" class="form-control">
+              <div class="input-group-append">
+                  <label class="input-group-text" for="inputGroupCategory" (click)="addBookToCategory(newCat.value)">Add New</label>
+                  <span>{{categorySelected}}</span>
+                </div> 
+            </div>
          </div>
        </div> 
        <div class="modal-footer"> 

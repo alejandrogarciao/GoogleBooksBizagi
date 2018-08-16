@@ -5,6 +5,7 @@ import { AngularFireAuth } from "angularfire2/auth";
 import { AngularFireDatabase, AngularFireList } from "angularfire2/database";
 import { BookList } from '../../models';
 import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 @Component({
   //selector: 'app-books-main',
@@ -16,28 +17,35 @@ export class MainListAppComponent implements OnInit {
   display = "none";
   value: string;
   book: any;
+  categorySelected: string = "";
   booksList: BookList;
   categoriesList: Observable<any[]>;
   selectedValue: string;
   @Input() collection: any;
   @Output() pushCollection = new EventEmitter<any>();
   user: firebase.User;
-
+  itemsRef: AngularFireList<any>;
+  db: AngularFireDatabase;
   constructor(private bookService: BooksListService, private authFire: AngularFireAuth,
     private rdb: AngularFireDatabase) {
     this.bookService.searchBooks('Colombia');
-    this.categoriesList = null;
-    this.selectedValue = null;
+    this.db = rdb;
     this.authFire.authState
     .subscribe(
-      user => {
-        this.user = user;
-        this.categoriesList = this.rdb.list('/collections/' + this.user.uid + "/").valueChanges();
-        let listCateg = this.rdb.list('/collections/' + this.user.uid + "/");
+      user => {  
+        this.user = user;        
+        this.itemsRef = rdb.list('/collections/' + user.uid + "/");
+        // Use snapshotChanges().map() to store the key
+        this.categoriesList = this.itemsRef.snapshotChanges().pipe(
+          map(changes => 
+            changes.map(c => ({ key: c.payload.key}))
+          )
+        );
       }
-    );
-  }
+    ); 
+ }
   ngOnInit() {
+
     this.bookService.booksList
       .subscribe(
         books => {
@@ -62,14 +70,9 @@ export class MainListAppComponent implements OnInit {
   }
 
   addBookToCategory(nameCategory: string) {
-    console.log(this.value);
+    console.log("cate: " + nameCategory);
     this.bookService.addCollections(nameCategory, this.book);
-    //this.pushCollection.emit(nameCategory+"/"+this.book);
     this.display = "none";
-    /*
-    console.log("idBook: " +  this.idBookCat + " - " + "idCategory: " + idCategory);
-     
-    */
   }
 
 

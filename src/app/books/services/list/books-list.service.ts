@@ -19,7 +19,7 @@ export class BooksListService {
   favsRef: AngularFireList<any>;
   collsRef: AngularFireList<any>;
   user: firebase.User;
-
+  category: string;
   constructor(private http: HttpClient, private alertService: MessagesService, private authFire: AngularFireAuth,
     rdb: AngularFireDatabase) {
     this.booksList.next({ kind: "", totalItems: 0, items: [] });
@@ -38,7 +38,8 @@ export class BooksListService {
       .subscribe(
         user => {
           this.user = user;
-          this.collsRef = rdb.list('collections/' + this.user.uid + "/" + "2" );
+          console.log("save:" + this.category);
+          this.collsRef = rdb.list('collections/' + this.user.uid + "/" + this.category);
         }
       );
   }
@@ -71,10 +72,10 @@ export class BooksListService {
   }  
 
   addCollections(category:string,book: any) {
-
+    this.category = category;
     const promise = this.collsRef.push(book);
     promise.then(_ => this.alertService.message("Adding to collection", "success"));
-    console.log("collection: " +  book);
+
   }  
 
   getBook(id: string): Observable<any> {
