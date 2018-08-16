@@ -20,8 +20,14 @@ export class BooksListService {
   collsRef: AngularFireList<any>;
   user: firebase.User;
   category: string;
+  db: AngularFireDatabase;
+  authFire2: AngularFireAuth;
+  alerts: MessagesService;
+
   constructor(private http: HttpClient, private alertService: MessagesService, private authFire: AngularFireAuth,
     rdb: AngularFireDatabase) {
+    this.alerts = alertService;
+    this.authFire2 = authFire;
     this.booksList.next({ kind: "", totalItems: 0, items: [] });
     authFire.authState
       .subscribe(
@@ -32,16 +38,7 @@ export class BooksListService {
           }
         }
       );
-    
-    this.booksList.next({ kind: "", totalItems: 0, items: [] });
-    authFire.authState
-      .subscribe(
-        user => {
-          this.user = user;
-          console.log("save:" + this.category);
-          this.collsRef = rdb.list('collections/' + this.user.uid + "/" + this.category);
-        }
-      );
+      this.db = rdb;
   }
 
   searchBooks(text: string, startIndex?: number, maxResults?: number) {
@@ -72,9 +69,14 @@ export class BooksListService {
   }  
 
   addCollections(category:string,book: any) {
-    this.category = category;
-    const promise = this.collsRef.push(book);
-    promise.then(_ => this.alertService.message("Adding to collection", "success"));
+    if(this.user){
+      this.collsRef = this.db.list('collections/' + this.user.uid + "/" + category);
+      const promise = this.collsRef.push(book);
+      promise.then(_ => this.alerts.message("Adding to collection", "success"));
+    }else{
+      this.alerts.message("Adding to collection", "error");
+    }
+    
 
   }  
 

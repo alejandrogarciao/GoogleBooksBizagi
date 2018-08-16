@@ -1,4 +1,6 @@
 #contentPage{
     display: flex;
     height: 100%;
+    background-image: url("src/assets/BackgroundContent3.jpg");
+    background-size: 100%;
 }

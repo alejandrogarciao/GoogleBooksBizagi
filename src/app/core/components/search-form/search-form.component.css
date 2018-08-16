@@ -2,3 +2,11 @@
     width: 84%;
     margin: 10px 10px 0px 10px;
 }
+
+.input-group{
+    position: relative;
+    float: right;
+    width: 70%;
+    margin-left: auto;
+    margin-right: 0;
+}

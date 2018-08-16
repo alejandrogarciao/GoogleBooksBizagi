@@ -72,6 +72,20 @@ export class MainListAppComponent implements OnInit {
   addBookToCategory(nameCategory: string) {
     console.log("cate: " + nameCategory);
     this.bookService.addCollections(nameCategory, this.book);
+   
+    /*
+    this.authFire.authState
+    .subscribe(
+      user => {  
+        this.user = user;        
+        this.itemsRef = this.db.list('/collections/' + user.uid + "/");
+        // Use snapshotChanges().map() to store the key
+        this.categoriesList = this.itemsRef.snapshotChanges().pipe(
+          map(changes => 
+            changes.map(c => ({ key: c.payload.key}))
+          )
+        );
+      })*/
     this.display = "none";
   }
 
