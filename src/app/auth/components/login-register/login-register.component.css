@@ -30,6 +30,14 @@
    
 }
 
+.help-block {
+    background:#ffbebe;
+    padding:1em;
+    width:100%;
+    display:block;
+    margin-bottom:20px;
+}
+
 .profile-img-card {
     width: 96px;
     height: 96px;

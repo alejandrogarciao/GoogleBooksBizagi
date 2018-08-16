@@ -23,6 +23,7 @@
           <!--div class="col">
               <a [routerLink]="['/login']" class="btn btn-link">I forgot my password</a>
           </div>-->
+          <span class="error" *ngIf="error" [@fallIn]='state'>{{ error }}</span>
         </div>
       </div>
   </div>

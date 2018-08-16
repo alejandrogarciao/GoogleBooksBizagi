@@ -12,7 +12,7 @@ import { MessagesService } from "../../../alerts/services/messages.service";
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-
+  error : any;
   constructor(private authService: AuthService, private router: Router, private zone: NgZone, private snackBar: MatSnackBar,private alertService: MessagesService) { }
 
   ngOnInit() {
@@ -30,6 +30,7 @@ export class LoginComponent implements OnInit {
         /*this.snackBar.open(error.message, "fail", {
           duration: 2000,
         });*/
+        this.error = error.message;
         this.alertService.message(error.message,"error");
       }
     );
