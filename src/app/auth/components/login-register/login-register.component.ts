@@ -12,20 +12,24 @@ import {MatSnackBar} from '@angular/material/snack-bar';
 export class LoginRegisterComponent implements OnInit {
   model: any = {};
   loading = false;
+  error : any;
   constructor(private authService: AuthService, private router: Router, public snackBar: MatSnackBar) { }
 
   ngOnInit() {
+    this.error="";
   }
   register() {
     this.loading = true;
     this.authService.create(this.model)
     .then(
       auth => {
-        this.router.navigate(['/login']); 
+        
+        this.router.navigate(['/login'])
       },
       error => {
-        alert(error.message);
+        //alert(error.message);
         this.loading = false;
+        this.error=error.message;
       }
     );
 }

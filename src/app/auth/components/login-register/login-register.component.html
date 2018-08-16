@@ -19,6 +19,9 @@
                     />
                     <a [routerLink]="['/login']" class="btn btn-link">Cancel</a>
                 </div>
+                <div>
+                    <span class="error" *ngIf="error" [@fallIn]='state'>{{ error }}</span>
+                </div>
             </form>
         </div>
     </div>

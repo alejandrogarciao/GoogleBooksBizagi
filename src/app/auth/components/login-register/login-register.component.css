@@ -9,6 +9,14 @@
     padding: 40px 40px;
 }
 
+.error {
+    background:#e03636;
+    padding:1em;
+    width:100%;
+    display:block;
+    margin-bottom:20px;
+}
+
 .btn {
     font-weight: 800;
     height: 36px;

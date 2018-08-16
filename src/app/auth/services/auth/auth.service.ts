@@ -60,6 +60,8 @@ export class AuthService {
       // Handle Errors here.
       var errorCode = error.code;
       var errorMessage = error.message;
+      throw error;
+      //alert(errorCode + errorMessage);
       // ...
     });
     
